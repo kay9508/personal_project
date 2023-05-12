@@ -34,6 +34,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-rest -->
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<version>3.0.6</version>
+		</dependency> -->
+
 		<!--jpa사용-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -84,7 +91,7 @@
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>jquery</artifactId>
-			<version>3.4.1</version>
+			<version>3.6.4</version>
 		</dependency>
 		<!--JSON 데이터를 처리하기 위한 자바 라이브러리-->
 		<dependency>
