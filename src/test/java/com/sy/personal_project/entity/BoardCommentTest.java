@@ -90,42 +90,22 @@ public class BoardCommentTest {
         assertFalse(boardCommentRepository.existsById(comment2.getId()));
     }
 
-
-    /*
     @Test
     public void boardAndBoardCommentSaveTest() {
-        Board board = new Board();
-        board.setTitle("테스트 게시글1 제목");
-        board.setContent("테스트 게시글1 내용");
-        //board.setDelAt(false);
-        //board.setCrePsId("admin");
-        boardRepository.save(board);
+        Optional<Board> loadOptional = boardRepository.findById(1L);
+        assertTrue(loadOptional.isPresent());
+        Board load = loadOptional.get();
 
-        BoardComment boardComment1 = new BoardComment();
-        boardComment1.setBoard(board);
-        boardComment1.setCrePsId("admin");
-        boardComment1.setDelAt(false);
-        boardComment1.setContent("게시글1에 대한 1번 댓글");
-        boardCommentRepository.save(boardComment1);
+        assertEquals("내용", load.getContent());
+        load.delete();
+        assertEquals(true,load.getDelAt());
 
-        BoardComment boardComment2 = new BoardComment();
-        boardComment2.setBoard(board);
-        boardComment2.setCrePsId("admin");
-        boardComment2.setDelAt(false);
-        boardComment2.setContent("게시글1에 대한 2번 댓글");
-        boardCommentRepository.save(boardComment2);
+        List<BoardComment> boardComments = load.getBoardComments();
 
-        // Read
-        Optional<Board> savedBoardOptional = boardRepository.findById(board.getId());
-        assertTrue(savedBoardOptional.isPresent());
-        Board loadBoard = savedBoardOptional.get();
-        assertEquals("테스트 게시글1 제목", loadBoard.getTitle());
-        assertEquals("테스트 게시글1 내용", loadBoard.getContent());
-
-        List<BoardComment> boardComments = loadBoard.getBoardComments();
-        assertEquals(2, boardComments.size());
+        for (BoardComment comment : boardComments) {
+            assertEquals(true, comment.getDelAt());
+        }
     }
-    */
 
 
 }

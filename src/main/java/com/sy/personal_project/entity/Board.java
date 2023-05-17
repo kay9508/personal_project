@@ -66,10 +66,12 @@ public class Board {
     // 게시판과 댓글 간의 일대다 관계 설정
     // OneToMany 의 기본 FetchType 은 LAZY
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<BoardComment> boardComments = new ArrayList<>();
+    List<BoardComment> boardComments;
 
     // 논리적 삭제를 구현하기 위해 생성한 delete메서드
     public void delete() {
+        /*EntityManager em
+        em.createQuery("update board_comment bc set bc.delAt='Y' where bc.board_pid = :")*/
         this.delAt = true;
         // this.boardComments.clear(); // 연관된 댓글 목록 초기화
     }
