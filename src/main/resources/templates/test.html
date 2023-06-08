@@ -13,5 +13,13 @@
 </head>
 <body>
     <div id="test">sss</div>
+    <div th:object="${load}">
+        <div th:text="${load.content}"></div>
+        <div th:each="coment : ${load.getBoardComments()}">
+            <div th:text="${coment.content}"></div>
+        </div>
+
+
+    </div>
 </body>
 </html>

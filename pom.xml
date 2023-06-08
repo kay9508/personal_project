@@ -9,15 +9,17 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sy</groupId>
-	<artifactId>personal_project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<!--<artifactId>personal_project</artifactId>-->
+	<artifactId>aa</artifactId>
+	<!--<version>0.0.1-SNAPSHOT</version>-->
+	<version>t1</version>
 	<packaging>war</packaging>
 	<name>personal_project</name>
 	<description>Project for Spring Boot</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>13</java.version>
+		<java.version>11</java.version>
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
 	</properties>
 	<dependencies>
